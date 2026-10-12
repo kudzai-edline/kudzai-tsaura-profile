@@ -1,0 +1,136 @@
+/* ===== Reset + Box Model (Part A) ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: #1a1a1a;
+  background: #fafafa;
+  padding: 1rem;
+}
+
+h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: #111; }
+h2 {
+  font-size: 1.4rem;
+  margin: 1.5rem 0 0.75rem;
+  color: #111;
+  border-bottom: 2px solid #e5e5e5;
+  padding-bottom: 0.5rem;
+}
+h3 { font-size: 1.1rem; margin: 1rem 0 0.5rem; color: #222; }
+p { margin-bottom: 1rem; }
+a { color: #1d4ed8; text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+header {
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+header p { color: #555; margin-bottom: 0; }
+
+/* ===== Nav — Flexbox (Part B) ===== */
+nav {
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 1rem;
+}
+nav a { font-weight: 500; }
+
+main > section {
+  padding: 1.5rem 1rem;
+  margin-bottom: 1rem;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+#skills ul { list-style: none; }
+#skills li { padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0; }
+#skills li:last-child { border-bottom: none; }
+
+/* ===== Projects — Grid (Part C) ===== */
+#projects {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+#projects h2 { grid-column: 1 / -1; }
+#projects article {
+  padding: 1rem;
+  background: #f9fafb;
+  border-radius: 6px;
+  border: 1px solid #e5e5e5;
+}
+
+aside {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f0f9ff;
+  border-left: 4px solid #1d4ed8;
+  border-radius: 4px;
+}
+aside ul { padding-left: 1.25rem; }
+
+form p { margin-bottom: 1rem; }
+label { display: inline-block; font-weight: 500; margin-bottom: 0.25rem; }
+input, select, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+}
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #1d4ed8;
+  border-color: #1d4ed8;
+}
+button {
+  padding: 0.6rem 1.5rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background: #111;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover { background: #333; }
+
+footer {
+  padding: 1rem;
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ===== Media Queries (Part D) — mobile-first, scaling up ===== */
+@media (min-width: 768px) {
+  body { padding: 2rem; max-width: 900px; margin: 0 auto; }
+  h1 { font-size: 2.2rem; }
+  h2 { font-size: 1.6rem; }
+  #projects { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1280px) {
+  body { max-width: 1200px; }
+  #projects { grid-template-columns: repeat(3, 1fr); }
+}
+
+img { max-width: 100%; height: auto; }
